@@ -10,8 +10,8 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AzkarCard from "../components/AzkarCard";
 import { morningEveningAzkar as azkarData } from "../data/azkar.json";
-
-console.log("azkarData", azkarData.length);
+import notifee from "@notifee/react-native";
+import { Button } from "../components/Button";
 
 type ZikrType = keyof (typeof azkarData)[0];
 
@@ -56,8 +56,34 @@ const HomeScreen = () => {
     setAzkarCounts({});
   };
 
+  async function onDisplayNotification() {
+    // Request permissions (required for iOS)
+    await notifee.requestPermission();
+
+    // Create a channel (required for Android)
+    const channelId = await notifee.createChannel({
+      id: "default",
+      name: "Default Channel",
+    });
+
+    // Display a notification
+    await notifee.displayNotification({
+      title: "Notification Title",
+      body: "Main body content of the notification",
+      android: {
+        channelId,
+        smallIcon: "name-of-a-small-icon", // optional, defaults to 'ic_launcher'.
+        // pressAction is needed if you want the notification to open the app when pressed
+        pressAction: {
+          id: "default",
+        },
+      },
+    });
+  }
+
   return (
     <View style={styles.container}>
+      <Button onPress={onDisplayNotification} text="Display Notification" />
       <FlatList
         data={azkarData}
         renderItem={({ item }) => (
