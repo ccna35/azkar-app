@@ -28,10 +28,5 @@ jobs:
           expo-token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Publish preview build
-        run: eas update --branch=pr-${{ github.event.pull_request.number }} --message 'Preview build for PR #${{ github.event.pull_request.number }}'
+        run: eas update --branch=pr-${{ github.event.pull_request.number }}
 
-      - name: Comment preview link on PR
-        uses: mshick/add-pr-comment@v2
-        with:
-          message: "🚀 Preview build published! Check it out: https://expo.dev/accounts/YOUR_USERNAME/projects/YOUR_PROJECT/branches/pr-${{ github.event.pull_request.number }}"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
