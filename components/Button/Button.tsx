@@ -2,7 +2,12 @@ import { Pressable, Text, View, ActivityIndicator } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons"; // Replace with your preferred icon library
 import { buttonStyles } from "./styles";
 
-export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "outline"
+  | "ghost"
+  | "danger";
 
 interface ButtonProps {
   text?: string;
