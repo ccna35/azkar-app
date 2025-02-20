@@ -15,16 +15,5 @@ module.exports = function (api) {
         },
       ],
     ],
-    plugins: [
-      [
-        "module-resolver",
-        {
-          alias: {
-            // This needs to be mirrored in tsconfig.json
-            "@": "./",
-          },
-        },
-      ],
-    ],
   };
 };
