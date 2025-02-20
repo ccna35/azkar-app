@@ -24,7 +24,8 @@
     "react-native-screens": "^4.5.0",
     "react-native-svg": "^15.11.1",
     "react-native-vector-icons": "^10.2.0",
-    "expo-dev-client": "~5.0.12"
+    "expo-dev-client": "~5.0.12",
+    "expo-updates": "~0.26.19"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
