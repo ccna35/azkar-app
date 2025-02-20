@@ -8,7 +8,6 @@ export const buttonStyles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
-    // minWidth: 100,
   },
   content: {
     flexDirection: "row",
@@ -38,5 +37,8 @@ export const buttonStyles = StyleSheet.create({
   },
   pressed: {
     opacity: 0.8,
+  },
+  danger: {
+    backgroundColor: "#FF3B30",
   },
 });
