@@ -16,7 +16,6 @@ module.exports = function (api) {
       ],
     ],
     plugins: [
-      "macros",
       ["babel-plugin-react-compiler", { target: "18" }],
 
       [
