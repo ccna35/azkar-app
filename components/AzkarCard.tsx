@@ -6,22 +6,10 @@ import { Button } from "./Button";
 interface AzkarCardProps {
   id: number;
   text: string;
-  // count: number;
   targetCount: number;
-  // onIncrement: () => void;
-  // onReset: () => void;
 }
 
-const AzkarCard: React.FC<AzkarCardProps> = ({
-  id,
-  text,
-  targetCount,
-  // count,
-  // onIncrement,
-  // onReset,
-}) => {
-  console.log("AzkarCard", id);
-
+const AzkarCard: React.FC<AzkarCardProps> = ({ id, text, targetCount }) => {
   const [count, setCount] = useState(0);
 
   const onIncrement = () => {
