@@ -16,8 +16,6 @@ module.exports = function (api) {
       ],
     ],
     plugins: [
-      ["babel-plugin-react-compiler", { target: "18" }],
-
       [
         "module-resolver",
         {
