@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18.x
-          cache: yarn
+          cache: npm # ✅ Updated from yarn to npm
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
@@ -32,9 +32,7 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci # ✅ Uses npm instead of yarn
 
       - name: Create preview
-        uses: expo/expo-github-action/preview@v8
-        with:
-          command: eas update --auto
+        run: eas update --branch=pr-${{ github.event.pull_request.number }} --message "Preview build for PR #${{ github.event.pull_request.number }}"
