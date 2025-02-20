@@ -36,6 +36,13 @@
       "eas": {
         "projectId": "9525b083-69a7-4a30-9fad-804f77852e52"
       }
-    }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9525b083-69a7-4a30-9fad-804f77852e52"
+    },
+    "owner": "ccna35"
   }
 }

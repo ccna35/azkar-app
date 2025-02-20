@@ -15,19 +15,5 @@ module.exports = function (api) {
         },
       ],
     ],
-    plugins: [
-      "macros",
-      ["babel-plugin-react-compiler", { target: "18" }],
-
-      [
-        "module-resolver",
-        {
-          alias: {
-            // This needs to be mirrored in tsconfig.json
-            "@": "./",
-          },
-        },
-      ],
-    ],
   };
 };
